@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.stats import norm
 
-def confidence_interval(N_samples=100, sample_size=30, true_mean=67, true_std=10, confidence=0.95):
+def confidence_interval(N_samples=40, sample_size=30, true_mean=79, true_std=11.85, confidence=0.95):
     """
     Demonstrates 95% confidence intervals for the mean.
     Parameters:
@@ -32,7 +32,7 @@ def confidence_interval(N_samples=100, sample_size=30, true_mean=67, true_std=10
 
         # WRITE_YOUR_CODE HERE TO COMPUTE SAMPLE MEAN, SAMPLE STANDARD ERROR, AND CI BOUNDS
         sample_mean = np.mean(sample)
-        sample_se = np.std(sample, ddof=1) / np.sqrt(sample_size)
+        sample_se = np.std(sample, ddof=1) / np.sqrt(sample_size-1)
 
         lower = sample_mean - z * sample_se
         upper = sample_mean + z * sample_se
