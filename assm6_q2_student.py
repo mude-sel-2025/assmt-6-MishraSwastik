@@ -32,7 +32,7 @@ def confidence_interval(N_samples=40, sample_size=30, true_mean=79, true_std=11.
 
         # WRITE_YOUR_CODE HERE TO COMPUTE SAMPLE MEAN, SAMPLE STANDARD ERROR, AND CI BOUNDS
         sample_mean = np.mean(sample)
-        sample_se = np.std(sample, ddof=1) / np.sqrt(sample_size-1)
+        sample_se = true_std / np.sqrt(sample_size)
 
         lower = sample_mean - z * sample_se
         upper = sample_mean + z * sample_se
